@@ -1,6 +1,6 @@
 package com.XPeru.chess;
 
-public class King extends ChessPieceBase {
+public class King extends ChessPieceBase{
 
 	public King(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
