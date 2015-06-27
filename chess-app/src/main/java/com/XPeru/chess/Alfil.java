@@ -3,8 +3,8 @@ package com.XPeru.chess;
 public class Alfil extends ChessPieceBase {
 
 	public Alfil(int xPosition, int yPosition, char namePiece) {
-		super(xPosition, yPosition, namePiece);
-		// TODO Auto-generated constructor stub
+		super(xPosition, yPosition);
+		this.setNamePiece('A');
 	}
 
 	@Override
