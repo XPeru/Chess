@@ -2,7 +2,7 @@ package com.XPeru.chess;
 
 public class Alfil extends ChessPieceBase {
 
-	public Alfil(int xPosition, int yPosition, char namePiece) {
+	public Alfil(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
 		this.setNamePiece('A');
 	}

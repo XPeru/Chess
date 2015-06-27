@@ -2,7 +2,7 @@ package com.XPeru.chess;
 
 public class Peon extends ChessPieceBase {
 
-	public Peon(int xPosition, int yPosition, char namePiece) {
+	public Peon(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
 		this.setNamePiece('P');
 	}

@@ -2,7 +2,7 @@ package com.XPeru.chess;
 
 public class Queen extends ChessPieceBase {
 
-	public Queen(int xPosition, int yPosition, char namePiece) {
+	public Queen(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
 		this.setNamePiece('Q');
 	}

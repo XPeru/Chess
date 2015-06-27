@@ -2,7 +2,7 @@ package com.XPeru.chess;
 
 public class Torre extends ChessPieceBase {
 
-	public Torre(int xPosition, int yPosition, char namePiece) {
+	public Torre(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
 		this.setNamePiece('T');
 	}

@@ -25,6 +25,6 @@ public class GameManager {
 		for(ChessPieceBase q:currentPosition.white) 
 			tablero[q.getxPosition()][q.getyPosition()] = Character.toLowerCase(q.getNamePiece());
 		
-		View.main(null);
+		View.rendering(tablero);
 	}
 }
