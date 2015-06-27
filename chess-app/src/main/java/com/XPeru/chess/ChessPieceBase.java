@@ -7,10 +7,9 @@ public abstract class ChessPieceBase {
 	private int yPosition;
 	private char namePiece;
 	
-	public ChessPieceBase(int xPosition, int yPosition, char namePiece) {
+	public ChessPieceBase(int xPosition, int yPosition) {
 		this.setxPosition(xPosition);
 		this.setyPosition(yPosition);
-		this.setNamePiece(namePiece);
 	}
 	public int getxPosition() {
 		return xPosition;

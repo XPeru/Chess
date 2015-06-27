@@ -3,8 +3,8 @@ package com.XPeru.chess;
 public class Caballo extends ChessPieceBase {
 
 	public Caballo(int xPosition, int yPosition, char namePiece) {
-		super(xPosition, yPosition, namePiece);
-		// TODO Auto-generated constructor stub
+		super(xPosition, yPosition);
+		this.setNamePiece('C');
 	}
 
 	@Override
