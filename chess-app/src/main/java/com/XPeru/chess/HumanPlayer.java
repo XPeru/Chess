@@ -6,8 +6,9 @@ public class HumanPlayer {
 		//p representa la posicion actual del tablero
 		
 		// entrada extra necesaria, String para definir la jugada del humano?
+		char[]coordenadas = jugada.toCharArray();
 		
-		
+		//
 		return null;
 	}
 
