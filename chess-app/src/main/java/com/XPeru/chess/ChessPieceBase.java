@@ -5,10 +5,12 @@ public abstract class ChessPieceBase {
 	abstract boolean isSupportCastle();
 	private int xPosition;
 	private int yPosition;
+	private char namePiece;
 	
-	public ChessPieceBase(int xPosition, int yPosition) {
+	public ChessPieceBase(int xPosition, int yPosition, char namePiece) {
 		this.setxPosition(xPosition);
 		this.setyPosition(yPosition);
+		this.setNamePiece(namePiece);
 	}
 	public int getxPosition() {
 		return xPosition;
@@ -30,6 +32,12 @@ public abstract class ChessPieceBase {
 		} else {
 			this.yPosition = -1;
 		}
+	}
+	public char getNamePiece() {
+		return namePiece;
+	}
+	public void setNamePiece(char namePiece) {
+		this.namePiece = namePiece;
 	}
 	
 }

@@ -1,10 +1,13 @@
 package com.XPeru.chess;
 
-public class HumanPlayer extends PlayerBase {
+public class HumanPlayer {
 
-	@Override
-	public ChessPieceTurn getTurn(Position p) {
-		// TODO Auto-generated method stub
+	public ChessPieceTurn getTurn(Position p, String jugada) {
+		//p representa la posicion actual del tablero
+		
+		// entrada extra necesaria, String para definir la jugada del humano?
+		
+		
 		return null;
 	}
 
