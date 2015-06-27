@@ -1,5 +1,7 @@
 package com.XPeru.chess;
 
+import com.XPeru.chess.graphics.View;
+
 public class GameManager {
 	
 	public static char[][] tablero;
