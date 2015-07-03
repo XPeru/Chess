@@ -43,7 +43,7 @@ public class View extends JPanel {
 	}
 
 	public void paint(Graphics g) {
-
+		g.setColor(Color.BLUE);
 		g.fillRect(50, 50, 400, 400);
 		for (int i = 50; i <= 350; i += 100) {
 			for (int j = 50; j <= 350; j += 100) {
