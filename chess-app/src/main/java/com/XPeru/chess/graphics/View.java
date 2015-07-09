@@ -9,9 +9,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
+
 public class View extends JPanel {
 
+	private static final long serialVersionUID = 8839901202144884746L;
+	
 	static char[][] aqui;
 
 	public BufferedImage buscarImagen(char c) throws IOException {
@@ -34,9 +36,24 @@ public class View extends JPanel {
 		case 'P':
 			return ImageIO.read(getClass().getResource(
 					"/com/XPeru/chess/images/peon_negro.png"));
-		case 'k':
+		case 't':
+			return ImageIO.read(getClass().getResource(
+					"/com/XPeru/chess/images/torre_blanca.png"));
+		case 'c':
+			return ImageIO.read(getClass().getResource(
+					"/com/XPeru/chess/images/caballo_blanco.png"));
+		case 'a':
 			return ImageIO.read(getClass().getResource(
 					"/com/XPeru/chess/images/alfil_blanco.png"));
+		case 'q':
+			return ImageIO.read(getClass().getResource(
+					"/com/XPeru/chess/images/reina_blanca.png"));
+		case 'k':
+			return ImageIO.read(getClass().getResource(
+					"/com/XPeru/chess/images/rey_blanco.png"));
+		case 'p':
+			return ImageIO.read(getClass().getResource(
+					"/com/XPeru/chess/images/peon_blanco.png"));
 		default:
 			return null;
 		}
