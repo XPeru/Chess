@@ -1,10 +1,13 @@
 package com.XPeru.chess;
 
+import java.util.List;
+
 public abstract class ChessPieceBase {
 	abstract boolean canBeChecked();
 	abstract boolean isSupportCastle();
-	private int xPosition;
-	private int yPosition;
+	abstract List<Point> possiblePositions();
+	protected int xPosition;
+	protected int yPosition;
 	private char namePiece;
 	
 	public ChessPieceBase(int xPosition, int yPosition) {

@@ -1,5 +1,7 @@
 package com.XPeru.chess;
 
+import java.util.List;
+
 public class Peon extends ChessPieceBase {
 
 	public Peon(int xPosition, int yPosition) {
@@ -17,6 +19,12 @@ public class Peon extends ChessPieceBase {
 	boolean isSupportCastle() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	List<Point> possiblePositions() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
