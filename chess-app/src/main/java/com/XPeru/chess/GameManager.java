@@ -18,9 +18,11 @@ public class GameManager {
 		currentPosition = new Position();
 		//View.rendering(currentPosition);
 		
-		ArrayList<ChessPieceBase> eduardoMaricon = currentPosition.getBlack();
-		eduardoMaricon.add(new King(5, 5));
-		//eduardoMaricon.get(1);
+		ArrayList<ChessPieceBase> gm = currentPosition.getBlack();
+//		gordoMaricon.add(new King(5, 5));
+		Torre tuptm = (Torre) gm.get(0);
+		tuptm.setxPosition(5);
+		tuptm.setyPosition(5);
 		View.rendering(currentPosition);
 	}
 }

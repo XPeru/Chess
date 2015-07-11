@@ -4,37 +4,36 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
 import com.XPeru.chess.ChessPieceBase;
 import com.XPeru.chess.Position;
-
 
 public class View extends JPanel {
 
 	private static final long serialVersionUID = 8839901202144884746L;
-	
+
 	static char[][] board;
-	
+
 	private static Position currentPosition;
-	
+
 	private static void initialize() {
 		board = new char[8][8];
-		for(int i = 0; i < board.length; i++)
-			for(int j = 0; j < board[0].length; j++)
+		for (int i = 0; i < board.length; i++)
+			for (int j = 0; j < board[0].length; j++)
 				board[i][j] = ' ';
 	}
+
 	private static void setUpBoard() {
-		for(ChessPieceBase p:currentPosition.getBlack()) 
+		for (ChessPieceBase p : currentPosition.getBlack())
 			board[p.getxPosition()][p.getyPosition()] = p.getNamePiece();
-		for(ChessPieceBase q:currentPosition.getWhite()) 
-			board[q.getxPosition()][q.getyPosition()] = Character.toLowerCase(q.getNamePiece());
-		
+		for (ChessPieceBase q : currentPosition.getWhite())
+			board[q.getxPosition()][q.getyPosition()] = Character.toLowerCase(q
+					.getNamePiece());
+
 	}
-	
+
 	public BufferedImage buscarImagen(char c) throws IOException {
 		switch (c) {
 		case 'T':
@@ -118,6 +117,6 @@ public class View extends JPanel {
 		frame.setBackground(Color.LIGHT_GRAY);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
+
 	}
 }
