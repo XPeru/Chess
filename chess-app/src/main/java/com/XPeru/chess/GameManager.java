@@ -1,10 +1,11 @@
 package com.XPeru.chess;
 
+import java.util.ArrayList;
+
 import com.XPeru.chess.graphics.View;
 
 public class GameManager {
 	
-	public static char[][] tablero;
 	static Position currentPosition;
 	
 	boolean acceptTurn(ChessPieceTurn turn) {
@@ -12,19 +13,14 @@ public class GameManager {
 	}
 	
 	public static void main(String[] args) {
-		
-		tablero = new char[8][8];
-		for(int i = 0; i < tablero.length; i++)
-			for(int j = 0; j < tablero[0].length; j++)
-				tablero[i][j] = ' ';
+
 		
 		currentPosition = new Position();
+		//View.rendering(currentPosition);
 		
-		for(ChessPieceBase p:currentPosition.black) 
-			tablero[p.getxPosition()][p.getyPosition()] = p.getNamePiece();
-		for(ChessPieceBase q:currentPosition.white) 
-			tablero[q.getxPosition()][q.getyPosition()] = Character.toLowerCase(q.getNamePiece());
-		
-		View.rendering(tablero);
+		ArrayList<ChessPieceBase> eduardoMaricon = currentPosition.getBlack();
+		eduardoMaricon.add(new King(5, 5));
+		//eduardoMaricon.get(1);
+		View.rendering(currentPosition);
 	}
 }

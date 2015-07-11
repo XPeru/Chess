@@ -9,13 +9,32 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import com.XPeru.chess.ChessPieceBase;
+import com.XPeru.chess.Position;
+
 
 public class View extends JPanel {
 
 	private static final long serialVersionUID = 8839901202144884746L;
 	
-	static char[][] aqui;
-
+	static char[][] board;
+	
+	private static Position currentPosition;
+	
+	private static void initialize() {
+		board = new char[8][8];
+		for(int i = 0; i < board.length; i++)
+			for(int j = 0; j < board[0].length; j++)
+				board[i][j] = ' ';
+	}
+	private static void setUpBoard() {
+		for(ChessPieceBase p:currentPosition.getBlack()) 
+			board[p.getxPosition()][p.getyPosition()] = p.getNamePiece();
+		for(ChessPieceBase q:currentPosition.getWhite()) 
+			board[q.getxPosition()][q.getyPosition()] = Character.toLowerCase(q.getNamePiece());
+		
+	}
+	
 	public BufferedImage buscarImagen(char c) throws IOException {
 		switch (c) {
 		case 'T':
@@ -60,7 +79,7 @@ public class View extends JPanel {
 	}
 
 	public void paint(Graphics g) {
-		g.setColor(Color.BLUE);
+		g.setColor(Color.GRAY);
 		g.fillRect(50, 50, 400, 400);
 		for (int i = 50; i <= 350; i += 100) {
 			for (int j = 50; j <= 350; j += 100) {
@@ -74,11 +93,11 @@ public class View extends JPanel {
 			}
 		}
 
-		for (int i = 0; i < aqui.length; i++) {
-			for (int j = 0; j < aqui[0].length; j++) {
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board[0].length; j++) {
 				try {
-					if (buscarImagen(aqui[i][j]) != null)
-						g.drawImage(buscarImagen(aqui[i][j]), 50 * (i + 1),
+					if (buscarImagen(board[i][j]) != null)
+						g.drawImage(buscarImagen(board[i][j]), 50 * (i + 1),
 								50 * (j + 1), 50, 50, this);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -88,8 +107,10 @@ public class View extends JPanel {
 		}
 	}
 
-	public static void rendering(char[][] tab) {
-		aqui = tab;
+	public static void rendering(Position position) {
+		currentPosition = position;
+		initialize();
+		setUpBoard();
 		JFrame frame = new JFrame();
 		frame.setSize(500, 500);
 		frame.getContentPane().add(new View());
