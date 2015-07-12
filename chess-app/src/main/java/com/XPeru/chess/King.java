@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class King extends ChessPieceBase {
-
+	protected boolean itHasBeenMoved = false;
 	public King(int xPosition, int yPosition) {
 		super(xPosition, yPosition);
 		this.setNamePiece('K');

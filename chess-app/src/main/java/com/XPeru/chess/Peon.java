@@ -1,11 +1,14 @@
 package com.XPeru.chess;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Peon extends ChessPieceBase {
+	private String color;
 
-	public Peon(int xPosition, int yPosition) {
+	public Peon(int xPosition, int yPosition, String color) {
 		super(xPosition, yPosition);
+		this.color = color;
 		this.setNamePiece('P');
 	}
 
@@ -23,8 +26,33 @@ public class Peon extends ChessPieceBase {
 
 	@Override
 	List<Point> possiblePositions() {
-		// TODO Auto-generated method stub
-		return null;
+		int x = this.xPosition;
+		int y = this.yPosition;
+		List<Point> possiblePositions = new ArrayList<Point>();
+		if (color.equals("black")) {
+			possiblePositions.add(new Point(x, y + 1));
+			if (y == 1) {
+				possiblePositions.add(new Point(x, y + 2));
+			}
+			if (x - 1 >= 0) {
+				possiblePositions.add(new Point(x - 1, y + 1));
+			}
+			if (x + 1 <= 7) {
+				possiblePositions.add(new Point(x + 1, y + 1));
+			}
+		} else if (color.equals("white")) {
+			possiblePositions.add(new Point(x, y - 1));
+			if (y == 6) {
+				possiblePositions.add(new Point(x, y - 2));
+			}
+			if (x - 1 >= 0) {
+				possiblePositions.add(new Point(x - 1, y - 1));
+			}
+			if (x + 1 <= 7) {
+				possiblePositions.add(new Point(x + 1, y - 1));
+			}
+		}
+		return possiblePositions;
 	}
 
 }
