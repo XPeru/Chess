@@ -27,7 +27,7 @@ public class GameManager {
 		ArrayList<ChessPieceBase> gm = currentPosition.getBlack();
 //		gordoMaricon.add(new King(5, 5));
 		ChessPieceBase tuptm = gm.get(0);
-		
+		System.out.println(currentPosition.toString());
 		movePiece(tuptm, new Point(5, 5));
 		View.rendering(currentPosition);
 	}
